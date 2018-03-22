@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server.ts"
+    "server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./api/src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -17,12 +17,18 @@
   },
   "homepage": "https://github.com/sashoa/ICOScraper#readme",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "koa": "^2.5.0",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
+    "@types/cheerio": "^0.22.7",
     "@types/koa": "^2.0.44",
     "@types/koa-router": "^7.0.27",
+    "@types/request": "^2.47.0",
+    "@types/request-promise": "^4.1.41",
     "nodemon": "^1.17.2",
     "ts-node": "^5.0.1",
     "typescript": "^2.7.2"

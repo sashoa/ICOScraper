@@ -1,12 +1,7 @@
 import * as Koa from 'koa';
-import * as Router from 'koa-router';
+import {router} from "./scraper";
 
 const app = new Koa();
-const router = new Router();
-
-router.get('/*', async (ctx) => {
-    ctx.body = {name: 'Sashe'};
-});
 
 app.use(router.routes());
 
