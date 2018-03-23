@@ -15,6 +15,7 @@ export class IcoComponent implements OnInit {
   constructor(private icoDataService: IcoDataService) { }
 
   ngOnInit() {
+    // console.log(this.ico);
   }
 
   toggleFullDescriptionVisible() {
