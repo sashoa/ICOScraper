@@ -1,0 +1,18 @@
+<header>
+  <h1>Ongoing ICOs</h1>
+  <nav>
+    <ul>
+    </ul>
+  </nav>
+</header>
+
+<div class="app-mode">
+  <button type="button" (click)="toggleAppMode()">Toggle mode</button>
+  <p *ngIf="!lazyMode">With this mode the application is collecting everything at once. This is slower.</p>
+  <p *ngIf="lazyMode">With this mode application is not showing Website URL, Token and Full Description right away,
+    instead it gets them when you click on info icon.</p>
+</div>
+
+<div class="ico-list">
+  <app-ico-list [icos]="icos" [lazyMode]="lazyMode"></app-ico-list>
+</div>

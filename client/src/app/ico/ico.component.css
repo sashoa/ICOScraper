@@ -1,0 +1,87 @@
+.ico-wrapper {
+  cursor: default;
+  padding: 24px;
+  -webkit-box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.15);
+}
+
+.ico {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ico-info {
+  width: 300px;
+  align-self: center;
+}
+
+.ico-title {
+  margin-bottom: 8px;
+  font-weight: normal;
+}
+
+.ico-short-description {
+  color: #444;
+}
+
+.ico-start-date, .ico-end-date {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100px;
+}
+
+.ico-start-date > div, .ico-end-date > div {
+}
+
+.ico-start-date > div:last-child, .ico-end-date > div:last-child {
+  color: darkgrey;
+  margin-top: 20px;
+}
+
+.ico-website {
+  width: 60px;
+}
+
+.ico-website > a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0C9587;
+}
+
+.ico-token {
+  width: 55px;
+}
+
+.ico-more-info {
+  align-self: center;
+}
+.ico-more-info > img {
+  cursor: pointer;
+}
+
+.ico-full-description {
+  overflow:hidden;
+  height: auto;
+  padding-top: 36px;
+  transition:max-height 0.9s ease-out;
+}
+.visually-hidden {
+  max-height: 0;
+  padding-top: 0;
+}
+
+.details-box {
+  margin-bottom: 16px;
+}
+
+.details-box > span {
+  padding-right: 16px;
+}
+.details-box > span > a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #0C9587;
+}
+

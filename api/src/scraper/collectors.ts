@@ -1,4 +1,5 @@
 import {Ico} from "../../../shared/Ico.model";
+import to from "../util/to";
 
 export function collectFromListPage($: CheerioStatic): Ico[] {
     let icos: Ico[] = [];
@@ -26,9 +27,13 @@ export function collectFromListPage($: CheerioStatic): Ico[] {
     return icos;
 }
 
-export function collectFromDetailsPage($: CheerioStatic) {
+export function collectFromDetailsPage($: CheerioStatic, uri?: string) {
     const website = $('.ico-card-about__link').first().attr('href');
     const fullDescription = $('#ico-description').text();
-    const tokenSymbol = null; // No Token names on CoinTelegraph?
-    return {website, fullDescription}
+    const detailsToken = uri ? uri.split('/').reverse()[0] : '';
+
+    const tokenCapFragment = $('#ico-detail > div > div:nth-child(2) > p').first().text();
+    const regex = new RegExp(/([A-Z])\w+/);
+    const [tokenSymbol] = regex.exec(tokenCapFragment);
+    return {website, fullDescription, detailsToken, tokenSymbol}
 }

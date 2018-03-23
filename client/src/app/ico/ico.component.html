@@ -1,0 +1,33 @@
+<div class="ico-wrapper">
+  <div class="ico">
+    <img [src]="ico.logoUrl" alt="" class="logoImg">
+    <div class="ico-info">
+      <h2 class="ico-title">{{ico.name}}</h2>
+      <p class="ico-short-description">{{ico.shortDescription}}</p>
+    </div>
+    <div class="ico-start-date">
+      <div>{{ico.startDate | date}}</div>
+      <div>{{ico.startDate | amTimeAgo}}</div>
+    </div>
+    <div class="ico-end-date">
+      <div>{{ico.endDate | date}}</div>
+      <div>{{ico.endDate | amTimeAgo}}</div>
+    </div>
+    <div class="ico-website" *ngIf="!lazyMode"><a href="{{ico.website}}" target="_blank">Website</a></div>
+    <div class="ico-token" *ngIf="!lazyMode"><strong>{{ico.tokenSymbol}}</strong></div>
+    <div class="ico-more-info">
+      <img src="../../assets/info.png" width="36px" alt="more-info" (click)="toggleFullDescriptionVisible()">
+    </div>
+  </div>
+  <div class="ico-full-description" [class.visually-hidden]="!fullDescriptionVisible">
+    <div class="details-box" *ngIf="lazyMode">
+      <span *ngIf="ico.website"><a href="{{ico.website}}" target="_blank">Website</a></span>
+      <span *ngIf="ico.tokenSymbol">Token: <strong>{{ico.tokenSymbol}}</strong></span>
+    </div>
+    <div  *ngIf="ico.fullDescription">
+      {{ico.fullDescription}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores laborum neque porro. Amet asperiores autem beatae cum enim labore modi natus quae quod recusandae, repellendus sit soluta, tenetur velit voluptatibus.
+    </div>
+    <app-loading [hidden]="!fullDescriptionVisible || ico.fullDescription"></app-loading>
+  </div>
+</div>
+

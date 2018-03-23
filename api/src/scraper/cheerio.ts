@@ -13,5 +13,5 @@ export async function scraper(uri: string, collectorFn: Function) {
         return
     }
 
-    return collectorFn($);
+    return collectorFn($, uri);
 }

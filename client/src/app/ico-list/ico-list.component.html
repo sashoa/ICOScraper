@@ -1,0 +1,9 @@
+<div *ngIf="(icos | async) as _icos; else loading">
+  <div class="ico-box" *ngFor="let ico of _icos">
+    <app-ico [ico]="ico" [lazyMode]="lazyMode"></app-ico>
+  </div>
+</div>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>
