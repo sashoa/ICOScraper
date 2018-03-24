@@ -55,7 +55,7 @@ export async function getIcoDetails(ctx: Context) {
 }
 
 export async function getOngoingIcosWithFullDetails(ctx: Context) {
-    const [err, icos]: [Error, Ico[]] = await to(scraper(icoListUrl, collectFromListPage));
+    const [err, icos]: [Error, Ico[]] = await to<Ico[]>(scraper(icoListUrl, collectFromListPage));
 
     if (err) {
         ctx.status = 500;

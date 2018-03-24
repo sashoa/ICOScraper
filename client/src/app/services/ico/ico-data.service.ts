@@ -24,4 +24,7 @@ export class IcoDataService {
   }
 }
 
-const mapIcos = map((res: any) => res.payload);
+const mapIcos = map((res: any) => {
+  console.log(res);
+  return res.payload
+});
